@@ -56,4 +56,10 @@ gulp.task('compile_scss', function() {
     .pipe(notify('compile scss into css Done! :)'));
 });
 
-gulp.task('default', ['compile_scss', 'inject_sort', 'connect']);
+// watchers
+gulp.task('watch', function(){
+  gulp.watch('src/assets/styles/styles.scss', ['compile_scss']);
+  gulp.watch('src/index.html', ['inject_sort']);
+});
+
+gulp.task('default', ['compile_scss', 'inject_sort', 'connect', 'watch']);
