@@ -6,6 +6,9 @@ var angularFilesort = require('gulp-angular-filesort');
 var inject = require('gulp-inject');
 var mainBowerFiles = require('main-bower-files');
 var notify = require('gulp-notify');
+var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
+var sass = require('gulp-sass');
 
 
 gulp.task('connect', function() {
@@ -39,4 +42,18 @@ gulp.task('inject_sort', function(){
   .pipe(notify('sort and inject Done! :)'));
 });
 
-gulp.task('default', ['inject_sort', 'connect']);
+// compile scss into css
+gulp.task('compile_scss', function() {
+   return gulp.src('src/assets/styles/styles.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+            browsers: ['> 1%', 'IE 9'],
+            cascade: false
+        }))
+    .pipe(rename('styles.css'))
+    .pipe(gulp.dest('src/assets/styles/'))
+    .pipe(connect.reload())
+    .pipe(notify('compile scss into css Done! :)'));
+});
+
+gulp.task('default', ['compile_scss', 'inject_sort', 'connect']);
