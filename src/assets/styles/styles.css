@@ -155,7 +155,7 @@ div.chat-container {
           animation: send-icon-flying 0.9s ease-in-out 0s; }
       div.chat-container form.chat-input input[type="submit"].sent-indicator {
         opacity: 0;
-        background: #4477bb;
+        background: #aaccff;
         width: 42px;
         height: 42px; }
       div.chat-container form.chat-input input[type="submit"].sending {
@@ -355,17 +355,17 @@ div.chat-container {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1; }
-  30% {
+  20% {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1; }
-  70% {
-    -webkit-transform: scale(3);
-    transform: scale(3);
+  60% {
+    -webkit-transform: scale(5);
+    transform: scale(5);
     opacity: 0.5; }
   100% {
-    -webkit-transform: scale(8);
-    transform: scale(8);
+    -webkit-transform: scale(10);
+    transform: scale(10);
     opacity: 0; } }
 
 @keyframes send-indicator {
@@ -373,17 +373,17 @@ div.chat-container {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1; }
-  30% {
+  20% {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1; }
-  70% {
-    -webkit-transform: scale(3);
-    transform: scale(3);
+  60% {
+    -webkit-transform: scale(5);
+    transform: scale(5);
     opacity: 0.5; }
   100% {
-    -webkit-transform: scale(8);
-    transform: scale(8);
+    -webkit-transform: scale(10);
+    transform: scale(10);
     opacity: 0; } }
 
 @-webkit-keyframes send-icon-flying {
@@ -396,20 +396,14 @@ div.chat-container {
   30% {
     display: absolute;
     background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-10px, -30px) rotate(-45deg);
-    transform: translate(-10px, -30px) rotate(-45deg);
+    /* transform: translate(-10px,-30px) rotate(-45deg); */
     opacity: 1; }
-  70% {
-    display: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-30px, -80px) rotate(-60deg);
-    transform: translate(-30px, -80px) rotate(-60deg);
-    opacity: 0.5; }
+  /*70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 } */
   100% {
     display: absolute;
     background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-200px, -400px) rotate(-80deg);
-    transform: translate(-200px, -400px) rotate(-80deg);
+    -webkit-transform: translate(-200px, -400px) rotate(-120deg);
+    transform: translate(-200px, -400px) rotate(-120deg);
     opacity: 0; } }
 
 @keyframes send-icon-flying {
@@ -422,18 +416,12 @@ div.chat-container {
   30% {
     display: absolute;
     background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-10px, -30px) rotate(-45deg);
-    transform: translate(-10px, -30px) rotate(-45deg);
+    /* transform: translate(-10px,-30px) rotate(-45deg); */
     opacity: 1; }
-  70% {
-    display: absolute;
-    background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-30px, -80px) rotate(-60deg);
-    transform: translate(-30px, -80px) rotate(-60deg);
-    opacity: 0.5; }
+  /*70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 } */
   100% {
     display: absolute;
     background-color: rgba(255, 255, 255, 0);
-    -webkit-transform: translate(-200px, -400px) rotate(-80deg);
-    transform: translate(-200px, -400px) rotate(-80deg);
+    -webkit-transform: translate(-200px, -400px) rotate(-120deg);
+    transform: translate(-200px, -400px) rotate(-120deg);
     opacity: 0; } }

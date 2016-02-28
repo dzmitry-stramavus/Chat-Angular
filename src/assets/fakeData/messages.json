@@ -1,0 +1,15 @@
+[
+  {
+    "user": "Olga",
+    "msg": "Hi!",
+    "timestamp": 1456651674675
+  },
+  {
+    "user": "Anton",
+    "msg": "Hi-hi!",
+    "timestamp": 1456651692612 },
+  {
+    "user": "Olga",
+    "msg": "How are you?",
+    "timestamp": 1456651891409 }
+]

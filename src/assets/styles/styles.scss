@@ -189,7 +189,7 @@ div.chat{
         }
         &.sent-indicator {
           opacity: 0;
-          background: $navy;
+          background: $lightBlue;
           width: 42px;
           height: 42px;
         }
@@ -229,13 +229,13 @@ div.chat{
 }
 @keyframes send-indicator {
   0%   { transform: scale(0);  opacity: 1 }
-  30%  { transform: scale(0);  opacity: 1 }
-  70%  { transform: scale(3.0);  opacity: 0.5 }
-  100% { transform: scale(8.0);  opacity: 0 }
+  20%  { transform: scale(0);  opacity: 1 }
+  60%  { transform: scale(5.0);  opacity: 0.5 }
+  100% { transform: scale(10.0);  opacity: 0 }
 }
 @keyframes send-icon-flying {
   0%   { display: absolute; background-color: rgba(255, 255, 255, 1); transform: translate(0px,0px);  opacity: 1 }
-  30%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-10px,-30px) rotate(-45deg);  opacity: 1 }
-  70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 }
-  100% { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-200px,-400px) rotate(-80deg); opacity: 0 }
+  30%  { display: absolute; background-color: rgba(255, 255, 255, 0); /* transform: translate(-10px,-30px) rotate(-45deg); */  opacity: 1 }
+/*70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 } */
+  100% { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-200px,-400px) rotate(-120deg); opacity: 0 }
 }
