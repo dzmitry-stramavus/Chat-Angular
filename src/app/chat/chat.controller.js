@@ -5,7 +5,7 @@ angular
   .module('GP-Chat-Angular')
   .controller('chatCtrl', chatCtrl);
 
-  function chatCtrl() {
+  function chatCtrl($timeout) {
     var chat = this;
 
     chat.messages = [
@@ -34,5 +34,19 @@ angular
         timestamp: "00:09"
       }
     ];
+
+    chat.send = function() {
+      var time = new Date().getTime().toString();
+
+      chat.messages.push({
+        self: true,
+        user: {
+          name: "Dmitry"
+        },
+        data: chat.textbox,
+        timestamp: time
+      });
+      chat.textbox = "";
+    };
   }
 })();

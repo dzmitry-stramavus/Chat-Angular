@@ -23,7 +23,7 @@
         <div class="sent-message-{{ message.self }} " ng-cloak>
           <span class="username">{{ message.user.name }}:</span>
           {{ message.data }}
-          <span class="timestamp">{{ message.timestamp }}</span>
+          <span class="timestamp">{{ message.timestamp | date: 'h:mm'}}</span>
         </div>
       </div>
     </div>
