@@ -43,13 +43,7 @@ div.chat{
         overflow: scroll;
         overflow-x: hidden;
         padding-bottom: 40px;
-        background: linear-gradient(
-          to bottom,
-          $blue 0%,
-          $blue 100%
-        );
-        background-size: 100% 10px;
-        background-repeat: no-repeat;
+        border-top: 10px solid $blue;
       }
       &-header {
         text-align: center;
@@ -58,6 +52,7 @@ div.chat{
         color: $textColor;
         padding-top: 10px;
         padding-bottom: 36px;
+        animation: chat-header-intro 2.2s ease-out 0s;
       }
       &-logo {
         display: inline-block;
@@ -69,11 +64,21 @@ div.chat{
         position: relative;
         top: 1.3em;
         left: -1em;
+        animation: chat-header-intro 2.0s ease-out 0s;
       }
     }
 
     .message-wrapper {
       position: relative;
+
+      div.sent-message-animate {
+        &-true {
+          animation: sent-message 0.9s ease-out 0s;
+        }
+        &-false {
+          animation: received-message 0.9s ease-out 0s;
+        }
+      }
 
       div.sent-message {
         &-false {
@@ -90,6 +95,7 @@ div.chat{
           font-weight: 400;
           background: rgba(255,255,255,0.9);
           overflow: initial;
+
           span.timestamp {
             position: absolute;
             top: 15px;
@@ -119,6 +125,7 @@ div.chat{
           font-weight: 400;
           background: $baseColor;
           overflow: initial;
+
           span.timestamp {
             position: absolute;
             top: 15px;
@@ -144,6 +151,7 @@ div.chat{
       span.username {
         font-weight: 600;
       }
+
     }
 
     form.chat-input {
@@ -170,21 +178,64 @@ div.chat{
         overflow: hidden;
 
         &.send-icon {
-          background: $lightBlue url(../img/paper-airplane.png);
+          background: white url(../img/paper-airplane.png);
           background-size: 80%;
           background-repeat: no-repeat;
           background-position: 4px 12px;
+
+          &.sending{
+            animation: send-icon-flying 0.9s ease-in-out 0s;
+          }
         }
         &.sent-indicator {
           opacity: 0;
-          background: $lightBlue;
+          background: $navy;
           width: 42px;
           height: 42px;
         }
         &.sending {
-
+          animation: send-indicator 0.9s ease-out 0s;
         }
       }
     }
   }
+}
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Animation-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+@keyframes chat-header-intro {
+  0%   { transform: translate(-100px,0px);                    opacity: 0 }
+  42%  { transform: translate(-80px,0px);                     opacity: 0.8 }
+  60%  { transform: translate(3px,0px)     scale(0.96,1.04);  opacity: 1 }
+  65%  { transform: translate(2px,0px);                       opacity: 1 }
+  80%  { transform: translate(-2px,0px);                      opacity: 0.8 }
+  90%  { transform: translate(1px,0px);                       opacity: 1 }
+  100% { transform: translate(0px,0px);                       opacity: 1 }
+}
+@keyframes sent-message {
+  0%   { color: rgba(32,40,70,0.9);    transform: translate(100px,50px); opacity: 0 }
+  42%  { color: rgba(32,40,70,0.9);    transform: translate(80px,40px);  opacity: 0.8 }
+  60%  { color: rgba(144,134,251,0.3); transform: translate(-3px,-7px);  opacity: 1 }
+  80%  { color: rgba(32,40,70,0.5);    transform: translate(2px,3px);    opacity: 1 }
+  90%  { color: rgba(32,40,70,0.7);    transform: translate(-1px,-2px);  opacity: 1 }
+  100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }
+}
+@keyframes received-message {
+  0%   { color: rgba(32,40,70,0.9);    transform: translate(-100px,0px); opacity: 0 }
+  42%  { color: rgba(32,40,70,0.9);    transform: translate(-80px,0px);  opacity: 0.8 }
+  60%  { color: rgba(122,214,184,0.9); transform: translate(3px,0px);  opacity: 1 }
+  80%  { color: rgba(32,40,70,0.6);    transform: translate(-2px,0px);    opacity: 1 }
+  90%  { color: rgba(32,40,70,0.8);    transform: translate(1px,0px);  opacity: 1 }
+  100% { color: rgba(32,40,70,0.9);    transform: translate(0px,0px);    opacity: 1 }
+}
+@keyframes send-indicator {
+  0%   { transform: scale(0);  opacity: 1 }
+  30%  { transform: scale(0);  opacity: 1 }
+  70%  { transform: scale(3.0);  opacity: 0.5 }
+  100% { transform: scale(8.0);  opacity: 0 }
+}
+@keyframes send-icon-flying {
+  0%   { display: absolute; background-color: rgba(255, 255, 255, 1); transform: translate(0px,0px);  opacity: 1 }
+  30%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-10px,-30px) rotate(-45deg);  opacity: 1 }
+  70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 }
+  100% { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-200px,-400px) rotate(-80deg); opacity: 0 }
 }

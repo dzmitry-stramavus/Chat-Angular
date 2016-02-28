@@ -8,6 +8,8 @@ angular
   function chatCtrl($timeout) {
     var chat = this;
 
+    chat.status = "";
+
     chat.messages = [
       {
         self: true,
@@ -46,7 +48,9 @@ angular
         data: chat.textbox,
         timestamp: time
       });
+      chat.status = "sending";
       chat.textbox = "";
+      $timeout( function() { chat.status = "" }, 1200 );
     };
   }
 })();

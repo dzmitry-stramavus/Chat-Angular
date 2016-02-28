@@ -35,17 +35,16 @@ div.chat-container {
     overflow: scroll;
     overflow-x: hidden;
     padding-bottom: 40px;
-    background: -webkit-linear-gradient(top, #5588ee 0%, #5588ee 100%);
-    background: linear-gradient(to bottom, #5588ee 0%, #5588ee 100%);
-    background-size: 100% 10px;
-    background-repeat: no-repeat; }
+    border-top: 10px solid #5588ee; }
   div.chat-container .chat-header {
     text-align: center;
     font-size: 1.5em;
     font-weight: 200;
     color: #22313F;
     padding-top: 10px;
-    padding-bottom: 36px; }
+    padding-bottom: 36px;
+    -webkit-animation: chat-header-intro 2.2s ease-out 0s;
+    animation: chat-header-intro 2.2s ease-out 0s; }
   div.chat-container .chat-logo {
     display: inline-block;
     background: transparent url(../img/logo.png);
@@ -55,9 +54,17 @@ div.chat-container {
     height: 4.1em;
     position: relative;
     top: 1.3em;
-    left: -1em; }
+    left: -1em;
+    -webkit-animation: chat-header-intro 2.0s ease-out 0s;
+    animation: chat-header-intro 2.0s ease-out 0s; }
   div.chat-container .message-wrapper {
     position: relative; }
+    div.chat-container .message-wrapper div.sent-message-animate-true {
+      -webkit-animation: sent-message 0.9s ease-out 0s;
+      animation: sent-message 0.9s ease-out 0s; }
+    div.chat-container .message-wrapper div.sent-message-animate-false {
+      -webkit-animation: received-message 0.9s ease-out 0s;
+      animation: received-message 0.9s ease-out 0s; }
     div.chat-container .message-wrapper div.sent-message-false {
       float: left;
       margin-top: 10px;
@@ -139,12 +146,294 @@ div.chat-container {
       height: 42px;
       overflow: hidden; }
       div.chat-container form.chat-input input[type="submit"].send-icon {
-        background: #aaccff url(../img/paper-airplane.png);
+        background: white url(../img/paper-airplane.png);
         background-size: 80%;
         background-repeat: no-repeat;
         background-position: 4px 12px; }
+        div.chat-container form.chat-input input[type="submit"].send-icon.sending {
+          -webkit-animation: send-icon-flying 0.9s ease-in-out 0s;
+          animation: send-icon-flying 0.9s ease-in-out 0s; }
       div.chat-container form.chat-input input[type="submit"].sent-indicator {
         opacity: 0;
-        background: #aaccff;
+        background: #4477bb;
         width: 42px;
         height: 42px; }
+      div.chat-container form.chat-input input[type="submit"].sending {
+        -webkit-animation: send-indicator 0.9s ease-out 0s;
+        animation: send-indicator 0.9s ease-out 0s; }
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-Animation-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+@-webkit-keyframes chat-header-intro {
+  0% {
+    -webkit-transform: translate(-100px, 0px);
+    transform: translate(-100px, 0px);
+    opacity: 0; }
+  42% {
+    -webkit-transform: translate(-80px, 0px);
+    transform: translate(-80px, 0px);
+    opacity: 0.8; }
+  60% {
+    -webkit-transform: translate(3px, 0px) scale(0.96, 1.04);
+    transform: translate(3px, 0px) scale(0.96, 1.04);
+    opacity: 1; }
+  65% {
+    -webkit-transform: translate(2px, 0px);
+    transform: translate(2px, 0px);
+    opacity: 1; }
+  80% {
+    -webkit-transform: translate(-2px, 0px);
+    transform: translate(-2px, 0px);
+    opacity: 0.8; }
+  90% {
+    -webkit-transform: translate(1px, 0px);
+    transform: translate(1px, 0px);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+@keyframes chat-header-intro {
+  0% {
+    -webkit-transform: translate(-100px, 0px);
+    transform: translate(-100px, 0px);
+    opacity: 0; }
+  42% {
+    -webkit-transform: translate(-80px, 0px);
+    transform: translate(-80px, 0px);
+    opacity: 0.8; }
+  60% {
+    -webkit-transform: translate(3px, 0px) scale(0.96, 1.04);
+    transform: translate(3px, 0px) scale(0.96, 1.04);
+    opacity: 1; }
+  65% {
+    -webkit-transform: translate(2px, 0px);
+    transform: translate(2px, 0px);
+    opacity: 1; }
+  80% {
+    -webkit-transform: translate(-2px, 0px);
+    transform: translate(-2px, 0px);
+    opacity: 0.8; }
+  90% {
+    -webkit-transform: translate(1px, 0px);
+    transform: translate(1px, 0px);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+
+@-webkit-keyframes sent-message {
+  0% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(100px, 50px);
+    transform: translate(100px, 50px);
+    opacity: 0; }
+  42% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(80px, 40px);
+    transform: translate(80px, 40px);
+    opacity: 0.8; }
+  60% {
+    color: rgba(144, 134, 251, 0.3);
+    -webkit-transform: translate(-3px, -7px);
+    transform: translate(-3px, -7px);
+    opacity: 1; }
+  80% {
+    color: rgba(32, 40, 70, 0.5);
+    -webkit-transform: translate(2px, 3px);
+    transform: translate(2px, 3px);
+    opacity: 1; }
+  90% {
+    color: rgba(32, 40, 70, 0.7);
+    -webkit-transform: translate(-1px, -2px);
+    transform: translate(-1px, -2px);
+    opacity: 1; }
+  100% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+
+@keyframes sent-message {
+  0% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(100px, 50px);
+    transform: translate(100px, 50px);
+    opacity: 0; }
+  42% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(80px, 40px);
+    transform: translate(80px, 40px);
+    opacity: 0.8; }
+  60% {
+    color: rgba(144, 134, 251, 0.3);
+    -webkit-transform: translate(-3px, -7px);
+    transform: translate(-3px, -7px);
+    opacity: 1; }
+  80% {
+    color: rgba(32, 40, 70, 0.5);
+    -webkit-transform: translate(2px, 3px);
+    transform: translate(2px, 3px);
+    opacity: 1; }
+  90% {
+    color: rgba(32, 40, 70, 0.7);
+    -webkit-transform: translate(-1px, -2px);
+    transform: translate(-1px, -2px);
+    opacity: 1; }
+  100% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+
+@-webkit-keyframes received-message {
+  0% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(-100px, 0px);
+    transform: translate(-100px, 0px);
+    opacity: 0; }
+  42% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(-80px, 0px);
+    transform: translate(-80px, 0px);
+    opacity: 0.8; }
+  60% {
+    color: rgba(122, 214, 184, 0.9);
+    -webkit-transform: translate(3px, 0px);
+    transform: translate(3px, 0px);
+    opacity: 1; }
+  80% {
+    color: rgba(32, 40, 70, 0.6);
+    -webkit-transform: translate(-2px, 0px);
+    transform: translate(-2px, 0px);
+    opacity: 1; }
+  90% {
+    color: rgba(32, 40, 70, 0.8);
+    -webkit-transform: translate(1px, 0px);
+    transform: translate(1px, 0px);
+    opacity: 1; }
+  100% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+
+@keyframes received-message {
+  0% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(-100px, 0px);
+    transform: translate(-100px, 0px);
+    opacity: 0; }
+  42% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(-80px, 0px);
+    transform: translate(-80px, 0px);
+    opacity: 0.8; }
+  60% {
+    color: rgba(122, 214, 184, 0.9);
+    -webkit-transform: translate(3px, 0px);
+    transform: translate(3px, 0px);
+    opacity: 1; }
+  80% {
+    color: rgba(32, 40, 70, 0.6);
+    -webkit-transform: translate(-2px, 0px);
+    transform: translate(-2px, 0px);
+    opacity: 1; }
+  90% {
+    color: rgba(32, 40, 70, 0.8);
+    -webkit-transform: translate(1px, 0px);
+    transform: translate(1px, 0px);
+    opacity: 1; }
+  100% {
+    color: rgba(32, 40, 70, 0.9);
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; } }
+
+@-webkit-keyframes send-indicator {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  30% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0.5; }
+  100% {
+    -webkit-transform: scale(8);
+    transform: scale(8);
+    opacity: 0; } }
+
+@keyframes send-indicator {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  30% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  70% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0.5; }
+  100% {
+    -webkit-transform: scale(8);
+    transform: scale(8);
+    opacity: 0; } }
+
+@-webkit-keyframes send-icon-flying {
+  0% {
+    display: absolute;
+    background-color: white;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; }
+  30% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-10px, -30px) rotate(-45deg);
+    transform: translate(-10px, -30px) rotate(-45deg);
+    opacity: 1; }
+  70% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-30px, -80px) rotate(-60deg);
+    transform: translate(-30px, -80px) rotate(-60deg);
+    opacity: 0.5; }
+  100% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-200px, -400px) rotate(-80deg);
+    transform: translate(-200px, -400px) rotate(-80deg);
+    opacity: 0; } }
+
+@keyframes send-icon-flying {
+  0% {
+    display: absolute;
+    background-color: white;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 1; }
+  30% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-10px, -30px) rotate(-45deg);
+    transform: translate(-10px, -30px) rotate(-45deg);
+    opacity: 1; }
+  70% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-30px, -80px) rotate(-60deg);
+    transform: translate(-30px, -80px) rotate(-60deg);
+    opacity: 0.5; }
+  100% {
+    display: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    -webkit-transform: translate(-200px, -400px) rotate(-80deg);
+    transform: translate(-200px, -400px) rotate(-80deg);
+    opacity: 0; } }
