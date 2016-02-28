@@ -1,3 +1,190 @@
-body {
+$navy:#4477bb;
+$blue:#5588ee;
+$baseColor:#C5EFF7;
+$lightBlue:#aaccff;
+$textColor:#22313F;
+$borderColor:rgba(32,40,70,0.4);
+$timeColor: gray;
 
+
+html, body, strong, button, small, input, p, div, h1, h2, h3, h4 {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.4em;
+  font-weight: 400;
+  font-size: 16px;
+  overflow: hidden;
+}
+button, input[type="submit"] {
+  cursor: pointer;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+div.chat{
+  &-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .chat {
+      &-messages {
+        order: 1;
+        flex: 1;
+        overflow: scroll;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+        background: linear-gradient(
+          to bottom,
+          $blue 0%,
+          $blue 100%
+        );
+        background-size: 100% 10px;
+        background-repeat: no-repeat;
+      }
+      &-header {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 200;
+        color: $textColor;
+        padding-top: 10px;
+        padding-bottom: 36px;
+      }
+      &-logo {
+        display: inline-block;
+        background: transparent url(../img/logo.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 4.0em;
+        height: 4.1em;
+        position: relative;
+        top: 1.3em;
+        left: -1em;
+      }
+    }
+
+    .message-wrapper {
+      position: relative;
+
+      div.sent-message {
+        &-false {
+          float: left;
+          margin-top: 10px;
+          margin-left: 35px;
+          margin-right: 45px;
+          border-radius: 8px 8px 8px 0;
+          display: inline-block;
+          color: $textColor;
+          padding: 12px;
+          border: 1px solid $borderColor;
+          font-size: 0.8em;
+          font-weight: 400;
+          background: rgba(255,255,255,0.9);
+          overflow: initial;
+          span.timestamp {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            font-size: 0.9em;
+            color: $timeColor;
+          }
+          &:before {
+            border-bottom: 10px solid $borderColor;
+            border-left: 9px solid rgba(0, 0, 0, 0);
+            position: absolute;
+            bottom: -1px;
+            left: 26px;
+            content: "";
+          }
+        }
+        &-true {
+          float: right;
+          margin-top: 10px;
+          margin-left: 45px;
+          margin-right: 35px;
+          border-radius: 8px 8px 0 8px;
+          display: inline-block;
+          color: $textColor;
+          padding: 14px;
+          font-size: 0.8em;
+          font-weight: 400;
+          background: $baseColor;
+          overflow: initial;
+          span.timestamp {
+            position: absolute;
+            top: 15px;
+            right: 5px;
+            font-size: 0.9em;
+            color: $timeColor;
+          }
+          &:before {
+            border-bottom: 9px solid $baseColor;
+            border-right: 9px solid white;
+            position: absolute;
+            bottom: 0px;
+            right: 27px;
+            content: "";
+          }
+        }
+        &-true:after, &-false:after {
+          display: table;
+          content: "";
+          clear: both;
+        }
+      }
+      span.username {
+        font-weight: 600;
+      }
+    }
+
+    form.chat-input {
+      position: relative;
+      order: 2;
+      height: 62px;
+      background: $navy;
+
+      input[type="text"] {
+        width: 80%;
+        color: $baseColor;
+        padding: 20px;
+        background: transparent;
+      }
+      input[type="submit"] {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 100px;
+        background: $baseColor;
+        color: white;
+        width: 42px;
+        height: 42px;
+        overflow: hidden;
+
+        &.send-icon {
+          background: $lightBlue url(../img/paper-airplane.png);
+          background-size: 80%;
+          background-repeat: no-repeat;
+          background-position: 4px 12px;
+        }
+        &.sent-indicator {
+          opacity: 0;
+          background: $lightBlue;
+          width: 42px;
+          height: 42px;
+        }
+        &.sending {
+
+        }
+      }
+    }
+  }
 }

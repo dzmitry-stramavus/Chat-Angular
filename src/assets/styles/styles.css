@@ -1,0 +1,150 @@
+html, body, strong, button, small, input, p, div, h1, h2, h3, h4 {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.4em;
+  font-weight: 400;
+  font-size: 16px;
+  overflow: hidden; }
+
+button, input[type="submit"] {
+  cursor: pointer; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+div.chat-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden; }
+  div.chat-container .chat-messages {
+    -webkit-box-ordinal-group: 2;
+    order: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+    background: -webkit-linear-gradient(top, #5588ee 0%, #5588ee 100%);
+    background: linear-gradient(to bottom, #5588ee 0%, #5588ee 100%);
+    background-size: 100% 10px;
+    background-repeat: no-repeat; }
+  div.chat-container .chat-header {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 200;
+    color: #22313F;
+    padding-top: 10px;
+    padding-bottom: 36px; }
+  div.chat-container .chat-logo {
+    display: inline-block;
+    background: transparent url(../img/logo.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 4.0em;
+    height: 4.1em;
+    position: relative;
+    top: 1.3em;
+    left: -1em; }
+  div.chat-container .message-wrapper {
+    position: relative; }
+    div.chat-container .message-wrapper div.sent-message-false {
+      float: left;
+      margin-top: 10px;
+      margin-left: 35px;
+      margin-right: 45px;
+      border-radius: 8px 8px 8px 0;
+      display: inline-block;
+      color: #22313F;
+      padding: 12px;
+      border: 1px solid rgba(32, 40, 70, 0.4);
+      font-size: 0.8em;
+      font-weight: 400;
+      background: rgba(255, 255, 255, 0.9);
+      overflow: initial; }
+      div.chat-container .message-wrapper div.sent-message-false span.timestamp {
+        position: absolute;
+        top: 15px;
+        left: 5px;
+        font-size: 0.9em;
+        color: gray; }
+      div.chat-container .message-wrapper div.sent-message-false:before {
+        border-bottom: 10px solid rgba(32, 40, 70, 0.4);
+        border-left: 9px solid transparent;
+        position: absolute;
+        bottom: -1px;
+        left: 26px;
+        content: ""; }
+    div.chat-container .message-wrapper div.sent-message-true {
+      float: right;
+      margin-top: 10px;
+      margin-left: 45px;
+      margin-right: 35px;
+      border-radius: 8px 8px 0 8px;
+      display: inline-block;
+      color: #22313F;
+      padding: 14px;
+      font-size: 0.8em;
+      font-weight: 400;
+      background: #C5EFF7;
+      overflow: initial; }
+      div.chat-container .message-wrapper div.sent-message-true span.timestamp {
+        position: absolute;
+        top: 15px;
+        right: 5px;
+        font-size: 0.9em;
+        color: gray; }
+      div.chat-container .message-wrapper div.sent-message-true:before {
+        border-bottom: 9px solid #C5EFF7;
+        border-right: 9px solid white;
+        position: absolute;
+        bottom: 0px;
+        right: 27px;
+        content: ""; }
+    div.chat-container .message-wrapper div.sent-message-true:after, div.chat-container .message-wrapper div.sent-message-false:after {
+      display: table;
+      content: "";
+      clear: both; }
+    div.chat-container .message-wrapper span.username {
+      font-weight: 600; }
+  div.chat-container form.chat-input {
+    position: relative;
+    -webkit-box-ordinal-group: 3;
+    order: 2;
+    height: 62px;
+    background: #4477bb; }
+    div.chat-container form.chat-input input[type="text"] {
+      width: 80%;
+      color: #C5EFF7;
+      padding: 20px;
+      background: transparent; }
+    div.chat-container form.chat-input input[type="submit"] {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border-radius: 100px;
+      background: #C5EFF7;
+      color: white;
+      width: 42px;
+      height: 42px;
+      overflow: hidden; }
+      div.chat-container form.chat-input input[type="submit"].send-icon {
+        background: #aaccff url(../img/paper-airplane.png);
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: 4px 12px; }
+      div.chat-container form.chat-input input[type="submit"].sent-indicator {
+        opacity: 0;
+        background: #aaccff;
+        width: 42px;
+        height: 42px; }
