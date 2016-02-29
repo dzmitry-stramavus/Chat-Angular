@@ -32,6 +32,7 @@
 
       this.send = function(data) {
         messages.push(data);
+        return $q.when({success: true});
       };
 
       this.get = function() {
@@ -90,6 +91,5 @@
           return randomMessages[Math.floor(Math.random()*8)];
         }
       }
-
     }
 })();

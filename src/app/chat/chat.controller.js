@@ -31,8 +31,9 @@ angular
         timestamp: currentTime
       };
 
-      messagesService.send(message);
-      messagesService.get().then(success, error);
+      messagesService.send(message).then( function(data) {
+        if(data.success) messagesService.get().then(success, error);
+      });
 
       chat.status = 'sending';
       chat.textbox = '';
@@ -49,13 +50,13 @@ angular
         chat.messages.push(response[i]);
       $timeout( function() { chatmessages.scrollTop = chatmessages.scrollHeight }, 1 );
     }
+
     function error(error) {
       console.log("Something goes wrong", error);
     }
 
-
     /*-=-=-=-=-=-=-=-=-=Imaginary Chating Group-=-=-=-=-=-=-=-=-=-=-=-=-*/
-    var SEVEN_SECONDS = 7000;
-    $interval(messagesServiceMock.sendRandomMessage, SEVEN_SECONDS)
+    var TEN_SECONDS = 10000;
+    $interval(messagesServiceMock.sendRandomMessage, TEN_SECONDS)
   }
 })();

@@ -15,8 +15,8 @@ angular
           data.timestamp,
           '&msg=',
           data.msg,
-          '&username=',
-          data.username
+          '&user=',
+          data.user
         ].join(''));
     };
 
@@ -27,10 +27,9 @@ angular
           'timestamp=',
           lastMessageTimestamp
         ].join(''));
-      promise.then(function(data){
-        lastMessageTimestamp = data[data.length - 1].timestamp;
-      });
 
+      promise.then(function(data){ lastMessageTimestamp = data[data.length - 1].timestamp; });
+      return promise;
     };
   }
 
