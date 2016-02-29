@@ -8,7 +8,7 @@ angular
   function chatCtrl($timeout, $interval, messagesServiceMock) {
     var chat = this;
     var messagesService = messagesServiceMock;
-    var chatmessages = document.querySelector(".chat-messages");
+    var chatmessages = document.querySelector(".chat-messages"); // use document (not $document), because I need method scrollTop and scrollHeight
     var RELOAD_TIME = 10000;
 
     chat.user = 'Dmitry-S';

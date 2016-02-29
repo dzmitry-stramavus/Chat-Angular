@@ -6,54 +6,43 @@
     .service('messagesServiceMock', serviceFunction);
 
     function serviceFunction($http, $q){
-      var lastTimestamp = '';
+      var lastTimestamp = 0;
       var messages = [
         {
+          "timestamp": 1456651674675,
           "user": "Olga",
-          "msg": "Hi!",
-          "timestamp": 1456651674675
+          "msg": "Hi!"
         },
         {
+          "timestamp": 1456651692612,
           "user": "Anton",
-          "msg": "Hi-hi!",
-          "timestamp": 1456651692612
+          "msg": "Hi-hi!"
         },
         {
+          "timestamp": 1456651693333,
           "user": "Dmitry-S",
-          "msg": "Wow!",
-          "timestamp": 1456651693333
+          "msg": "Wow!"
         },
         {
+          "timestamp": 1456651891409,
           "user": "Olga",
-          "msg": "How are you?",
-          "timestamp": 1456651891409
+          "msg": "How are you?"
         }
       ];
 
       this.send = function(data) {
         messages.push(data);
-        console.log(messages);
       };
 
       this.get = function() {
-        if (!lastTimestamp) {
-          lastTimestamp = messages[messages.length - 1].timestamp;
-          return $q.when(messages);
-        }
-
-        var i;
-        var len;
+        var i, len;
         var newMessages = [];
 
-        for (i = 0, len = messages.length; i < len; i++) {
-          console.log(lastTimestamp, messages[i].timestamp)
-          if (messages[i].timestamp > lastTimestamp) {
-            console.log(messages[i])
-            newMessages.push(messages[i]);
-          }
+        for (var i = 0, len = messages.length; i < len; i++) {
+          if (messages[i].timestamp > lastTimestamp) newMessages.push(messages[i]);
         }
         lastTimestamp = messages[i - 1].timestamp;
-        console.log(newMessages);
+
         return $q.when(newMessages);
       };
     }
