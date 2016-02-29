@@ -14,6 +14,7 @@ angular
     chat.user = 'Dmitry-S';
     chat.status = '';
     chat.messages = [];
+    chat.messagesLimit = 10;
 
     chat.send = send;
     chat.checkUser = checkUser;

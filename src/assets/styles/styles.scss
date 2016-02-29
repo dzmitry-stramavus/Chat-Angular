@@ -237,5 +237,5 @@ div.chat{
   0%   { display: absolute; background-color: rgba(255, 255, 255, 1); transform: translate(0px,0px);  opacity: 1 }
   30%  { display: absolute; background-color: rgba(255, 255, 255, 0); /* transform: translate(-10px,-30px) rotate(-45deg); */  opacity: 1 }
 /*70%  { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-30px,-80px) rotate(-60deg); opacity: 0.5 } */
-  100% { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-200px,-400px) rotate(-120deg); opacity: 0 }
+  100% { display: absolute; background-color: rgba(255, 255, 255, 0); transform: translate(-200px,-400px) rotate(-120deg) scale(0.5) ; opacity: 0 }
 }
