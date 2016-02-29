@@ -131,9 +131,9 @@ div.chat-container {
     height: 62px;
     background: #4477bb; }
     div.chat-container form.chat-input input[type="text"] {
-      width: 80%;
+      width: 75%;
       color: #C5EFF7;
-      padding: 20px;
+      margin: 20px;
       background: transparent; }
     div.chat-container form.chat-input input[type="submit"] {
       position: absolute;
