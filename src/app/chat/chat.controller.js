@@ -5,7 +5,7 @@ angular
   .module('GP-Say_Hi')
   .controller('chatCtrl', chatCtrl);
 
-  function chatCtrl($timeout, $interval, messagesServiceMock) {
+  function chatCtrl($timeout, $interval, messagesService, messagesServiceMock) {
     var chat = this;
     var messagesService = messagesServiceMock;
     var chatmessages = document.querySelector(".chat-messages"); // use document (not $document), because I need method scrollTop and scrollHeight
@@ -16,6 +16,7 @@ angular
     chat.messages = [];
 
     chat.send = send;
+    chat.checkUser = checkUser;
 
     messagesService.get().then(success, error);
     $interval(function(){ messagesService.get().then(success, error) }, RELOAD_TIME);
@@ -36,6 +37,10 @@ angular
       chat.textbox = '';
       $timeout( function() { chat.status = '' }, 1200 );
       $timeout( function() { chatmessages.scrollTop = chatmessages.scrollHeight }, 1 );
+    }
+
+    function checkUser(currentUser) {
+      return currentUser === chat.user ? 'yours' : currentUser;
     }
 
     function success(response) {

@@ -62,6 +62,7 @@ gulp.task('unit-test', function (done) {
     configFile: __dirname + '/test/karma.conf.js'
   }, done);
 });
+
 // watchers
 gulp.task('watch', function(){
   gulp.watch('src/assets/styles/styles.scss', ['compile_scss']);
