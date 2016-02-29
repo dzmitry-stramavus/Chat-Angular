@@ -45,5 +45,51 @@
 
         return $q.when(newMessages);
       };
+
+      this.sendRandomMessage = function() {
+        var timestamp = new Date().getTime();
+        var randomMessages = [
+          {
+            "user": "Max",
+            "msg": "Hi all!"
+          },
+          {
+            "user": "Timon",
+            "msg": "Hi-hi!"
+          },
+          {
+            "user": "Vasia",
+            "msg": "Hi there!"
+          },
+          {
+            "user": "Nastya",
+            "msg": "What's up?"
+          },
+          {
+            "user": "Alisa",
+            "msg": "Hi :)"
+          },
+          {
+            "user": "Markus",
+            "msg": "Who are you?"
+          },
+          {
+            "user": "Tina",
+            "msg": "I'm lost!!!"
+          },
+          {
+            "user": "Adam",
+            "msg": "Where am I?"
+          }
+        ];
+        var message = getRandomMessage();
+        message.timestamp = timestamp;
+        messages.push(message);
+
+        function getRandomMessage() {
+          return randomMessages[Math.floor(Math.random()*8)];
+        }
+      }
+
     }
 })();

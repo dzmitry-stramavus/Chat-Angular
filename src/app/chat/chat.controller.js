@@ -9,7 +9,7 @@ angular
     var chat = this;
     var messagesService = messagesServiceMock;
     var chatmessages = document.querySelector(".chat-messages"); // use document (not $document), because I need method scrollTop and scrollHeight
-    var RELOAD_TIME = 10000;
+    var RELOAD_TIME = 5000;
 
     chat.user = 'Dmitry-S';
     chat.status = '';
@@ -46,5 +46,10 @@ angular
     function error(error) {
       console.log("Something goes wrong", error);
     }
+
+
+    /*-=-=-=-=-=-=-=-=-=Imaginary Chating Group-=-=-=-=-=-=-=-=-=-=-=-=-*/
+    var SEVEN_SECONDS = 7000;
+    $interval(messagesServiceMock.sendRandomMessage, SEVEN_SECONDS)
   }
 })();
