@@ -1,6 +1,7 @@
 {
   "name": "GP-Say_Hi",
   "devDependencies": {
-    "angular": "~1.5.0"
+    "angular": "~1.5.0",
+    "angular-mocks": "~1.4.x"
   }
 }

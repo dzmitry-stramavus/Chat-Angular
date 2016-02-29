@@ -3,24 +3,26 @@
   "version": "1.0.0",
   "description": "Chat for mobile devices using framework Angular",
   "main": "index.js",
-  "scripts": {
-  },
-  "repository": {
-  },
+  "scripts": {},
+  "repository": {},
   "author": "Dmitry Stremous",
   "license": "ISC",
-  "bugs": {
-  },
+  "bugs": {},
   "homepage": "",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-connect": "^2.2.0",
     "gulp-angular-filesort": "^1.1.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect": "^2.2.0",
     "gulp-inject": "^3.0.0",
     "gulp-notify": "^2.2.0",
-    "main-bower-files": "^2.11.1",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0"
+    "gulp-sass": "^2.2.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "karma-jasmine-matchers": "^2.0.1",
+    "main-bower-files": "^2.11.1"
   }
 }

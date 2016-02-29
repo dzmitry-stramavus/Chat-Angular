@@ -9,6 +9,8 @@ var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
+var karma = require("karma");
+var Server = karma.Server;
 
 
 gulp.task('connect', function() {
@@ -55,7 +57,11 @@ gulp.task('compile_scss', function() {
     .pipe(connect.reload())
     .pipe(notify('compile scss into css Done! :)'));
 });
-
+gulp.task('unit-test', function (done) {
+  Server.start({
+    configFile: __dirname + '/test/karma.conf.js'
+  }, done);
+});
 // watchers
 gulp.task('watch', function(){
   gulp.watch('src/assets/styles/styles.scss', ['compile_scss']);

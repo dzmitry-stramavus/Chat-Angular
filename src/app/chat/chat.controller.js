@@ -32,9 +32,9 @@ angular
       messagesService.send(message);
       messagesService.get().then(success, error);
 
-      chat.status = "sending";
-      chat.textbox = "";
-      $timeout( function() { chat.status = "" }, 1200 );
+      chat.status = 'sending';
+      chat.textbox = '';
+      $timeout( function() { chat.status = '' }, 1200 );
       $timeout( function() { chatmessages.scrollTop = chatmessages.scrollHeight }, 1 );
     }
 

@@ -1,8 +1,8 @@
 {
-  "name": "angular-animate",
-  "version": "1.5.0",
-  "description": "AngularJS module for animations",
-  "main": "index.js",
+  "name": "angular-mocks",
+  "version": "1.4.9",
+  "description": "AngularJS mocks for testing",
+  "main": "angular-mocks.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,8 @@
     "angular",
     "framework",
     "browser",
-    "animation",
+    "mocks",
+    "testing",
     "client-side"
   ],
   "author": "Angular Core Team <angular-core+npm@google.com>",
