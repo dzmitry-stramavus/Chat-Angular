@@ -1,2 +1,2 @@
-# Chat-Angular
-Chat App (using Angular)
+# GP-Say_Hi (chat app using Angular)
+

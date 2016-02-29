@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('GP-Chat-Angular')
+    .module('GP-Say_Hi')
     .service('messagesServiceMock', serviceFunction);
 
     function serviceFunction($http, $q){

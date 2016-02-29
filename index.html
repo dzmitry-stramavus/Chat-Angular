@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="GP-Chat-Angular" lang="en">
+<html ng-app="GP-Say_Hi" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -8,7 +8,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="/src/assets/styles/styles.css">
   <!-- endinject -->
-  <title>GP-Chat-Angular</title>
+  <title>GP-Say_Hi</title>
 </head>
 <body >
 
@@ -17,7 +17,7 @@
     <div class="chat-messages">
       <div class="chat-header">
         <div class="chat-logo"></div>
-        GP-Chat-Angular
+        GP-Say_Hi
       </div>
       <div class="message-wrapper" ng-repeat="message in chat.messages">
         <div class="sent-message-animate-{{ message.user === chat.user }}">
@@ -40,7 +40,6 @@
 
   <!-- bower:js -->
   <script src="/bower_components/angular/angular.js"></script>
-  <script src="/bower_components/angular-animate/angular-animate.js"></script>
   <!-- endinject -->
 
   <!-- inject:js -->

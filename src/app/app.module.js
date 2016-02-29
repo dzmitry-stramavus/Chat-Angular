@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('GP-Chat-Angular', ['ngAnimate']);
+    .module('GP-Say_Hi', []);
 
 })();

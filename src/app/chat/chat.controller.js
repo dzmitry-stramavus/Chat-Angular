@@ -2,7 +2,7 @@
 'use strict';
 
 angular
-  .module('GP-Chat-Angular')
+  .module('GP-Say_Hi')
   .controller('chatCtrl', chatCtrl);
 
   function chatCtrl($timeout, $interval, messagesServiceMock) {
