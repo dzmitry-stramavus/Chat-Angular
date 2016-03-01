@@ -24,6 +24,8 @@ angular
 
 
     function send() {
+      if (!chat.textbox) return;
+
       var currentTime = new Date().getTime();
       var message = {
         user: chat.user,
