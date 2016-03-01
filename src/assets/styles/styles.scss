@@ -84,7 +84,7 @@ div.chat{
         &-false {
           float: left;
           margin-top: 10px;
-          margin-left: 35px;
+          margin-left: 40px;
           margin-right: 45px;
           border-radius: 8px 8px 8px 0;
           display: inline-block;
@@ -108,7 +108,7 @@ div.chat{
             border-left: 9px solid rgba(0, 0, 0, 0);
             position: absolute;
             bottom: -1px;
-            left: 26px;
+            left: 31px;
             content: "";
           }
         }
@@ -116,7 +116,7 @@ div.chat{
           float: right;
           margin-top: 10px;
           margin-left: 45px;
-          margin-right: 35px;
+          margin-right: 40px;
           border-radius: 8px 8px 0 8px;
           display: inline-block;
           color: $textColor;
@@ -138,7 +138,7 @@ div.chat{
             border-right: 9px solid white;
             position: absolute;
             bottom: 0px;
-            right: 27px;
+            right: 32px;
             content: "";
           }
         }

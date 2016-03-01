@@ -68,7 +68,7 @@ div.chat-container {
     div.chat-container .message-wrapper div.sent-message-false {
       float: left;
       margin-top: 10px;
-      margin-left: 35px;
+      margin-left: 40px;
       margin-right: 45px;
       border-radius: 8px 8px 8px 0;
       display: inline-block;
@@ -90,13 +90,13 @@ div.chat-container {
         border-left: 9px solid transparent;
         position: absolute;
         bottom: -1px;
-        left: 26px;
+        left: 31px;
         content: ""; }
     div.chat-container .message-wrapper div.sent-message-true {
       float: right;
       margin-top: 10px;
       margin-left: 45px;
-      margin-right: 35px;
+      margin-right: 40px;
       border-radius: 8px 8px 0 8px;
       display: inline-block;
       color: #22313F;
@@ -116,7 +116,7 @@ div.chat-container {
         border-right: 9px solid white;
         position: absolute;
         bottom: 0px;
-        right: 27px;
+        right: 32px;
         content: ""; }
     div.chat-container .message-wrapper div.sent-message-true:after, div.chat-container .message-wrapper div.sent-message-false:after {
       display: table;
