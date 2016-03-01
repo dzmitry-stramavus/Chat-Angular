@@ -1,4 +1,4 @@
-will be soon... - link to launch this project
+http://dzmitry-stramavus.github.io/ - link to launch this project
 
 # GP-Say_Hi (chat app using Angular)
 
