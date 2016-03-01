@@ -46,8 +46,8 @@ angular
     }
 
     function success(response) {
-      for (var i = 0, len = response.length; i < len; i++)
-        chat.messages.push(response[i]);
+      _.each(response, function(message){ chat.messages.push(message) });
+
       $timeout( function() { chatmessages.scrollTop = chatmessages.scrollHeight }, 1 );
     }
 
@@ -56,7 +56,7 @@ angular
     }
 
     /*-=-=-=-=-=-=-=-=-=Imaginary Chating Group-=-=-=-=-=-=-=-=-=-=-=-=-*/
-    var TEN_SECONDS = 10000;
-    $interval(messagesServiceMock.sendRandomMessage, TEN_SECONDS)
+    var SEVEN_SECONDS = 7000;
+    $interval(messagesServiceMock.sendRandomMessage, SEVEN_SECONDS)
   }
 })();

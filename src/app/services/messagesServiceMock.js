@@ -5,7 +5,7 @@
     .module('GP-Say_Hi')
     .service('messagesServiceMock', serviceFunction);
 
-    function serviceFunction($http, $q){
+    function serviceFunction($http, $q, _){
       var lastTimestamp = 0;
       var messages = [
         {
@@ -38,16 +38,18 @@
       this.get = function() {
         var newMessages = [];
 
-        for (var i = 0, len = messages.length; i < len; i++) {
-          if (messages[i].timestamp > lastTimestamp) newMessages.push(messages[i]);
-        }
-        lastTimestamp = messages[i - 1].timestamp;
+        _.each(messages, function(message){
+          if (message.timestamp > lastTimestamp) newMessages.push(message);
+        });
+
+        lastTimestamp = messages[messages.length - 1].timestamp;
 
         return $q.when(newMessages);
       };
 
       this.sendRandomMessage = function() {
         var timestamp = new Date().getTime();
+        var NUMBER_OF_MESSAGES = 8;
         var randomMessages = [
           {
             "user": "Max",
@@ -87,7 +89,7 @@
         messages.push(message);
 
         function getRandomMessage() {
-          return randomMessages[Math.floor(Math.random()*8)];
+          return randomMessages[Math.floor(Math.random()*NUMBER_OF_MESSAGES)];
         }
       }
     }
