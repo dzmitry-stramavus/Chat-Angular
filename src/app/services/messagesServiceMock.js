@@ -36,7 +36,6 @@
       };
 
       this.get = function() {
-        var i, len;
         var newMessages = [];
 
         for (var i = 0, len = messages.length; i < len; i++) {
